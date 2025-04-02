@@ -1,7 +1,7 @@
 package com.neoteric.promocode.controller;
 
-import com.neoteric.promocode.entity.Promotion;
-import com.neoteric.promocode.service.PromotionService;
+import com.neoteric.promocode.model.PrimaryPromotion;
+import com.neoteric.promocode.service.PrimaryPromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,25 +10,24 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/promotions")
-public class PromotionController {
-
+public class PrimaryPromotionController {
 
     @Autowired
-    private PromotionService promotionService;
+    private PrimaryPromotionService promotionService;
 
     @GetMapping("/allPromotions")
-    public List<Promotion> getAllPromotions() {
+    public List<PrimaryPromotion> getAllPromotions() {
         return promotionService.getAllPromotions();
     }
 
     @GetMapping("/{id}")
-    public Promotion getPromotionById(@PathVariable Long id) {
+    public PrimaryPromotion getPromotionById(@PathVariable Long id) {
         return promotionService.getPromotionById(id);
     }
 
     @PostMapping("/addPromotion")
-    public Promotion addPromotion(@RequestBody Promotion promotion) {
-        return promotionService.addPromotion(promotion);
+    public PrimaryPromotion addPromotion(@RequestBody PrimaryPromotion promotionDTO) {
+        return promotionService.addPromotion(promotionDTO);
     }
 
     @DeleteMapping("/{id}")

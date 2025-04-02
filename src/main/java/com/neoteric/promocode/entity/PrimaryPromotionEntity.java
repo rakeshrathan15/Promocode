@@ -1,16 +1,11 @@
 package com.neoteric.promocode.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Entity
 @Table(name = "promotions")
-@Data
-@AllArgsConstructor
-
-public class Promotion {
+public class PrimaryPromotionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +14,14 @@ public class Promotion {
     private String name;
     private String description;
 
-    public Promotion() {}
 
-    public Promotion(String name, String description) {
+
+    public PrimaryPromotionEntity(){
+
+    }
+
+    public PrimaryPromotionEntity(Long id, String name, String description) {
+        this.id = id;
         this.name = name;
         this.description = description;
     }
