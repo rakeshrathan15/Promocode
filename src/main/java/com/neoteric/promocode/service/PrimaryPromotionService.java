@@ -34,7 +34,9 @@ public class PrimaryPromotionService {
     public PrimaryPromotion addPromotion(PrimaryPromotion promotionDTO) {
         PrimaryPromotionEntity promotion = objectMapper.convertValue(promotionDTO, PrimaryPromotionEntity.class);
         PrimaryPromotionEntity savedPromotion = promotionRepository.save(promotion);
+
         return objectMapper.convertValue(savedPromotion, PrimaryPromotion.class);
+
     }
 
     public void deletePromotion(Long id) {
@@ -48,5 +50,11 @@ public class PrimaryPromotionService {
 //                .build();
 //        promotionRepository.save(promotion);
 //    }
+
+
+
+
+
+
 
 }

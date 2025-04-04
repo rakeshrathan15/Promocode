@@ -8,9 +8,11 @@ public class PrimaryPromotion {
 
     private PrimaryPromotion() {
 
+
     }
 
     public PrimaryPromotion(String name, String description) {
+
         this.name = name;
         this.description = description;
     }
@@ -25,10 +27,12 @@ public class PrimaryPromotion {
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public void setDescription(String description) {
+
         this.description = description;
     }
 }

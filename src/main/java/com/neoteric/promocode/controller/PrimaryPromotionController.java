@@ -9,8 +9,11 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/promotions")
+
 public class PrimaryPromotionController {
+
 
     @Autowired
     private PrimaryPromotionService promotionService;
@@ -27,11 +30,14 @@ public class PrimaryPromotionController {
 
     @PostMapping("/addPromotion")
     public PrimaryPromotion addPromotion(@RequestBody PrimaryPromotion promotionDTO) {
+
         return promotionService.addPromotion(promotionDTO);
     }
 
     @DeleteMapping("/{id}")
     public void deletePromotion(@PathVariable Long id) {
+
         promotionService.deletePromotion(id);
+
     }
 }
